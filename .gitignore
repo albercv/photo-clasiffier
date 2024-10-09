@@ -1,0 +1,104 @@
+# Archivos y carpetas de Python
+__pycache__/                 # Caché generado por Python
+*.py[cod]                    # Archivos de bytecode y compilados
+*.pyo                        # Archivos optimizados de Python
+*.pyd                        # Archivos DLL compilados en Windows
+
+# Archivos de entorno virtual
+venv/                        # Entorno virtual estándar de Python
+env/                         # Otro nombre común para entornos virtuales
+ai_env/                      # Nombre específico del entorno virtual (ajústalo según tu entorno)
+ai_env/*
+static.7z
+
+# Excluir modelos y archivos pesados
+models/
+*.h5
+*.hdf5
+*.pb
+
+# Excluir archivos binarios grandes
+*.pyd
+*.dll
+*.so
+
+# Archivos generados por Jupyter Notebook
+.ipynb_checkpoints/          # Checkpoints de Jupyter
+*.ipynb_checkpoints          # Archivos individuales de checkpoints
+
+# Archivos de configuración de entornos
+*.env                        # Archivos de entorno (variables de entorno, secretos)
+.env.local                   # Configuración local de entorno
+.env.development             # Configuración de entorno de desarrollo
+.env.production              # Configuración de entorno de producción
+.env.*                       # Cualquier otro archivo de entorno que pueda tener información sensible
+
+# Archivos de configuración de Flask
+instance/                    # Configuración y bases de datos locales
+*.db                         # Archivos de bases de datos SQLite
+*.sqlite3                    # Otro formato común de bases de datos locales
+
+# Archivos de modelos de aprendizaje automático
+models/                      # Carpeta de modelos (puedes personalizar según tu estructura)
+*.h5                         # Modelos de Keras/TensorFlow
+*.hdf5                       # Modelos en formato HDF5
+*.pb                         # Modelos de TensorFlow en formato Protocol Buffers
+
+# Archivos de logs y depuración
+*.log                        # Archivos de logs generales
+logs/                        # Carpeta de logs (si la usas)
+*.out                        # Archivos de salida de logs
+
+# Archivos de caché y temporales
+.cache/                      # Caché general de Python y otras herramientas
+*.tmp                        # Archivos temporales
+*.bak                        # Archivos de respaldo
+*.swp                        # Archivos de swap (creados por editores de texto)
+*.swo                        # Otro tipo de archivos swap
+
+# Archivos de configuración de IDE y editores de texto
+.vscode/                     # Configuración de VSCode
+.idea/                       # Configuración de PyCharm/IntelliJ IDEA
+*.sublime-project            # Configuración de Sublime Text
+*.sublime-workspace          # Configuración de espacios de trabajo de Sublime
+
+# Archivos y carpetas generados por Docker (si usas Docker)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Archivos de Node.js (si tienes frontend en la app)
+node_modules/                # Módulos de Node.js (no deben subirse)
+package-lock.json            # Lockfile de npm
+yarn.lock                    # Lockfile de Yarn
+npm-debug.log                # Logs de npm
+
+# Archivos de imágenes y otros binarios grandes
+static/images/               # Carpeta de imágenes en la estructura de Flask (ajusta si es necesario)
+*.jpg                        # Archivos de imágenes JPEG
+*.jpeg                       # Archivos de imágenes JPEG
+*.png                        # Archivos de imágenes PNG
+*.gif                        # Archivos de imágenes GIF
+*.webp                       # Archivos de imágenes WEBP
+
+# Archivos de configuración específicos de la aplicación
+progress.txt                 # Archivo de progreso específico de tu aplicación
+config.json                  # Archivos de configuración que pueden tener información sensible
+*.csv                        # Archivos CSV generados (puedes excluir si se generan automáticamente)
+
+# Archivos de despliegue y credenciales (certificados, llaves)
+*.pem                        # Llaves PEM para certificados SSL/TLS
+*.crt                        # Certificados de cliente
+*.key                        # Llaves privadas
+*.cfg                        # Archivos de configuración genéricos
+
+# Archivos de entorno de Python
+*.whl                        # Archivos de rueda de Python
+pip-log.txt                  # Logs de instalación de pip
+pip-delete-this-directory.txt # Logs de errores de pip
+
+# Archivos de despliegue de plataformas
+*.DS_Store                   # Mac OS: archivos de configuración de directorios
+*.Thumbs.db                  # Windows: archivos de visualización de miniaturas
+
+static/*

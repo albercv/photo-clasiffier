@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Rating</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-container {
+            margin: 20px auto;
+            display: inline-block;
+            text-align: left;
+        }
+        .form-container label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .radio-group input {
+            margin: 0 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .buttons .like-button,
+        .buttons .dislike-button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 1; /* Los botones se expanden para ocupar el espacio disponible */
+            margin: 0 10px;
+        }
+        .like-button {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+        .dislike-button {
+            background-color: #800080; /* Morado */
+            color: white;
+        }
+        .discard-button {
+            background-color: #f44336; /* Rojo */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 0 0 auto; /* Fijar el tamaño del botón */
+            margin-left: 20px; /* Separación del botón de descartar */
+        }
+    </style>
+</head>
+<body>
+    <h1>Rate the Image</h1>
+    <div>
+        <!-- Display the current image -->
+        <img src="{{ url_for('static', filename='images/' + image) }}" alt="Current Image" width="400" height="400">
+    </div>
+
+    <div class="form-container">
+        <!-- Form to rate the image -->
+        <form method="POST">
+            <!-- Radio buttons for Beauty -->
+            <label>Beauty:</label>
+            <div class="radio-group">
+                {% for i in range(1, 6) %}
+                <input type="radio" id="beauty{{ i }}" name="beauty" value="{{ i }}" {% if i == 1 %}checked{% endif %}>
+                <label for="beauty{{ i }}">{{ i }}</label>
+                {% endfor %}
+            </div>
+
+            <!-- Radio buttons for Eyes -->
+            <label>Eyes:</label>
+            <div class="radio-group">
+                {% for i in range(1, 6) %}
+                <input type="radio" id="eyes{{ i }}" name="eyes" value="{{ i }}" {% if i == 1 %}checked{% endif %}>
+                <label for="eyes{{ i }}">{{ i }}</label>
+                {% endfor %}
+            </div>
+
+            <!-- Radio buttons for Lips -->
+            <label>Lips:</label>
+            <div class="radio-group">
+                {% for i in range(1, 6) %}
+                <input type="radio" id="lips{{ i }}" name="lips" value="{{ i }}" {% if i == 1 %}checked{% endif %}>
+                <label for="lips{{ i }}">{{ i }}</label>
+                {% endfor %}
+            </div>
+
+            <!-- Radio buttons for Neckline -->
+            <label>Neckline:</label>
+            <div class="radio-group">
+                {% for i in range(1, 6) %}
+                <input type="radio" id="neckline{{ i }}" name="neckline" value="{{ i }}" {% if i == 1 %}checked{% endif %}>
+                <label for="neckline{{ i }}">{{ i }}</label>
+                {% endfor %}
+            </div>
+
+            <!-- Buttons for Like, Dislike, and Discard -->
+            <div class="buttons">
+                <button type="submit" name="action" value="like" class="like-button">Me Gusta</button>
+                <button type="submit" name="action" value="dislike" class="dislike-button">No Me Gusta</button>
+                <button type="submit" name="action" value="discard" class="discard-button">Descartar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
